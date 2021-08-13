@@ -1,0 +1,434 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "PMS API Documentation",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/admin-register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "Admin Registration",
+                "description": "Returns the message and status",
+                "operationId": "adminRegister",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Admin"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "admin@mailinator.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "Admin1234"
+                                    },
+                                    "role": {
+                                        "type": "integer",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "User Registration",
+                "description": "Returns the message and status",
+                "operationId": "userRegister",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "User"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@mailinator.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "User1234"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "Login",
+                "description": "Returns the message and status",
+                "operationId": "userLogin",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@mailinator.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "User1234"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Insert profile",
+                "description": "Returns the message and status",
+                "operationId": "profile",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@mailinator.com"
+                                    },
+                                    "gender": {
+                                        "type": "string",
+                                        "example": "male/female"
+                                    },
+                                    "phone_number": {
+                                        "type": "integer",
+                                        "example": "9876543210"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string",
+                                        "example": "yyyy-mm-dd"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/profile-update": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Update profile",
+                "description": "Returns the message and status",
+                "operationId": "profileUpdate",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@mailinator.com"
+                                    },
+                                    "gender": {
+                                        "type": "string",
+                                        "example": "male/female"
+                                    },
+                                    "phone_number": {
+                                        "type": "integer",
+                                        "example": "9876543210"
+                                    },
+                                    "date_of_birth": {
+                                        "type": "string",
+                                        "example": "yyyy-mm-dd"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/forgot-passwordchange": {
+            "post": {
+                "tags": [
+                    "Password"
+                ],
+                "summary": "To change password",
+                "description": "Returns the message and status",
+                "operationId": "changePassword",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@mailinator.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/verifyotp": {
+            "post": {
+                "tags": [
+                    "Password"
+                ],
+                "summary": "To verify otp",
+                "description": "Returns the message and status",
+                "operationId": "verifyOtp",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "otp": {
+                                        "type": "integer",
+                                        "example": "xxxxxx"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "/update-password": {
+            "post": {
+                "tags": [
+                    "Password"
+                ],
+                "summary": "Update new password",
+                "description": "Returns the message and status",
+                "operationId": "newPassword",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "user@mailinator.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "User1234"
+                                    },
+                                    "confirm_password": {
+                                        "type": "string",
+                                        "example": "User1234"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
